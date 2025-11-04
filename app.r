@@ -5,7 +5,7 @@ library(dplyr)
 # Clickable github icon + link
 github_link <- tags$a(
     shiny::icon("github"), "GitHub",
-    href = "https://github.com/mstanley-yo/satolab-seeding-helper",
+    href = "https://github.com/mstanley-yo/satolab-codon-helper",
     target = "_blank"
 )
 
@@ -111,12 +111,11 @@ ui <- page_navbar(
         "AA to Codon",
         layout_sidebar(
             sidebar = sidebar(
-                selectInput(
+                radioButtons(
                     "aa",
                     "Select amino acid:",
                     choices = amino_acids
                 ),
-                helpText("Examples: F, L, A, *, M, R"),
                 open = "always"
             ),
             value_box(
